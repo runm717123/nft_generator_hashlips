@@ -8,17 +8,43 @@ const description =
   "This is the description of your NFT project, remember to replace this";
 const baseUri = "ipfs://NewUriToReplace";
 
+// { name: "Background" },
+// { name: "Eyeball" },
+// { name: "Eye color" },
+// { name: "Iris" },
+// { name: "Shine" },
+// { name: "Bottom lid" },
+// { name: "Top lid" },
+
 const layerConfigurations = [
   {
-    growEditionSizeTo: 10,
+    growEditionSizeTo: 250,
     layersOrder: [
-      { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "FROGGY BACKGROUND" },
+      { name: "CHARACTER" },
+      { name: "COSTUME" },
+      { name: "AKSESORIS KEPALA" },
+      { name: "AKSESORIS KOSTUM" },
+    ],
+  },
+  {
+    growEditionSizeTo: 300,
+    layersOrder: [
+      { name: "FROGGY BACKGROUND" },
+      { name: "CHARACTER" },
+      { name: "COSTUME" },
+      { name: "HELM VIKING" },
+      { name: "AKSESORIS KOSTUM" },
+    ],
+  },
+  {
+    growEditionSizeTo: 350,
+    layersOrder: [
+      { name: "FROGGY BACKGROUND" },
+      { name: "CHARACTER" },
+      { name: "COSTUME WITH HAMMER" },
+      { name: "HELM VIKING" },
+      { name: "AKSESORIS KOSTUM" },
     ],
   },
 ];
@@ -28,8 +54,8 @@ const shuffleLayerConfigurations = false;
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
+  width: 250,
+  height: 250,
 };
 
 const background = {
@@ -39,7 +65,7 @@ const background = {
 
 const extraMetadata = {};
 
-const rarityDelimiter = "#";
+const rarityDelimiter = "";
 
 const uniqueDnaTorrance = 10000;
 
