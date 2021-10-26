@@ -3,7 +3,7 @@
 const path = require("path");
 const isLocal = typeof process.pkg === "undefined";
 const basePath = isLocal ? process.cwd() : path.dirname(process.execPath);
-const { NETWORK } = require(path.join(basePath, "/src/network.js"));
+const { NETWORK } = require(path.join(basePath, "constants/network.js"));
 const fs = require("fs");
 const sha1 = require(path.join(basePath, "/node_modules/sha1"));
 const { createCanvas, loadImage } = require(path.join(
