@@ -4,62 +4,72 @@ const path = require("path");
 const isLocal = typeof process.pkg === "undefined";
 const basePath = isLocal ? process.cwd() : path.dirname(process.execPath);
 const { MODE } = require(path.join(basePath, "src/blendMode.js"));
+
+// General metadata for Ethereum
+const namePrefix = "Your Collection";
 const description =
-  "This is the description of your NFT project, remember to replace this";
+  "the gundul's series";
 const baseUri = "ipfs://NewUriToReplace";
 
-// { name: "Background" },
-// { name: "Eyeball" },
-// { name: "Eye color" },
-// { name: "Iris" },
-// { name: "Shine" },
-// { name: "Bottom lid" },
-// { name: "Top lid" },
+const { NETWORK } = require(path.join(basePath, "/src/network.js"));
 
 const layerConfigurations = [
   {
-    growEditionSizeTo: 250,
+    growEditionSizeTo: 6370,
     layersOrder: [
-      { name: "FROGGY BACKGROUND" },
-      { name: "CHARACTER" },
-      { name: "COSTUME" },
-      { name: "AKSESORIS KEPALA" },
-      { name: "AKSESORIS KOSTUM" },
+      { name: "gndl_Background" },
+      { name: "gndl_Body" },
+      { name: "gndl_Mata" },
+      { name: "gndl_Mulut" },
     ],
-  },
-  {
-    growEditionSizeTo: 300,
-    layersOrder: [
-      { name: "FROGGY BACKGROUND" },
-      { name: "CHARACTER" },
-      { name: "COSTUME" },
-      { name: "HELM VIKING" },
-      { name: "AKSESORIS KOSTUM" },
-    ],
-  },
-  {
-    growEditionSizeTo: 350,
-    layersOrder: [
-      { name: "FROGGY BACKGROUND" },
-      { name: "CHARACTER" },
-      { name: "COSTUME WITH HAMMER" },
-      { name: "HELM VIKING" },
-      { name: "AKSESORIS KOSTUM" },
-    ],
-  },
+  }
 ];
 
 const shuffleLayerConfigurations = false;
 
 const debugLogs = false;
 
+const gif = {
+  export: false,
+  repeat: 0,
+  quality: 100,
+  delay: 500,
+};
+
+const text = {
+  only: false,
+  color: "#ffffff",
+  size: 20,
+  xGap: 40,
+  yGap: 40,
+  align: "left",
+  baseline: "top",
+  weight: "regular",
+  family: "Courier",
+  spacer: " => ",
+};
+
+const solanaMetadata = {
+  symbol: "YC",
+  seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
+  external_url: "https://www.youtube.com/c/hashlipsnft",
+  creators: [
+    {
+      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
+      share: 100,
+    },
+  ],
+};
+
+const network = NETWORK.eth;
+
 const format = {
-  width: 250,
-  height: 250,
+  width: 720,
+  height: 720,
 };
 
 const background = {
-  generate: true,
+  generate: false,
   brightness: "80%",
 };
 
@@ -88,4 +98,9 @@ module.exports = {
   shuffleLayerConfigurations,
   debugLogs,
   extraMetadata,
+  text,
+  namePrefix,
+  network,
+  solanaMetadata,
+  gif,
 };
