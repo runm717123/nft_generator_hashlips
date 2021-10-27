@@ -28,12 +28,37 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
+    growEditionSizeTo: 100,
+    layersOrder: [
+      { name: "gndl_Background" },
+      { name: "gndl_Body" },
+      { name: "gndl_custume_ninja" },
+      { name: "gndl_Mata" },
+      // { name: "gndl_syal" },
+    ],
+  },
+  {
+    growEditionSizeTo: 200,
     layersOrder: [
       { name: "gndl_Background" },
       { name: "gndl_Body" },
       { name: "gndl_Mata" },
       { name: "gndl_Mulut" },
+      { name: "gndl_helm_soldier" },
+      { name: "gndl_costume_soldier" },
+      // { name: "gndl_syal" },
+    ],
+  },
+  {
+    growEditionSizeTo: 1000,
+    layersOrder: [
+      { name: "gndl_Background" },
+      { name: "gndl_Body" },
+      { name: "gndl_Mata" },
+      { name: "gndl_Mulut" },
+      { name: "gndl_rambut" },
+      { name: "gndl_costume" },
+      // { name: "gndl_syal" },
     ],
   }
 ];
@@ -49,43 +74,9 @@ const gif = {
   delay: 500,
 };
 
-const text = {
-  only: false,
-  color: "#ffffff",
-  size: 20,
-  xGap: 40,
-  yGap: 40,
-  align: "left",
-  baseline: "top",
-  weight: "regular",
-  family: "Courier",
-  spacer: " => ",
-};
-
-const solanaMetadata = {
-  symbol: "YC",
-  seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
-  external_url: "https://www.youtube.com/c/hashlipsnft",
-  creators: [
-    {
-      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
-      share: 100,
-    },
-  ],
-};
-
-const network = NETWORK.eth;
-
 const format = {
   width: 720,
   height: 720,
-};
-
-const gif = {
-  export: false,
-  repeat: 0,
-  quality: 100,
-  delay: 500,
 };
 
 const text = {

@@ -54,6 +54,10 @@ const buildSetup = () => {
 };
 
 const getRarityWeight = (_str) => {
+  if (rarityDelimiter === '') {
+    return 1
+  }
+
   let nameWithoutExtension = _str.slice(0, -4);
   var nameWithoutWeight = Number(
     nameWithoutExtension.split(rarityDelimiter).pop()
@@ -355,12 +359,15 @@ const startCreating = async () => {
             ? console.log("Editions left to create: ", abstractedIndexes)
             : null;
           saveImage(abstractedIndexes[0]);
-          addMetadata(newDna, abstractedIndexes[0]);
-          saveMetaDataSingleFile(abstractedIndexes[0]);
+          // addMetadata(newDna, abstractedIndexes[0]);
+          // saveMetaDataSingleFile(abstractedIndexes[0]);
+          // console.log(
+          //   `Created edition: ${abstractedIndexes[0]}, with DNA: ${sha1(
+          //     newDna
+          //   )}`
+          // );
           console.log(
-            `Created edition: ${abstractedIndexes[0]}, with DNA: ${sha1(
-              newDna
-            )}`
+            `Created edition: ${abstractedIndexes[0]}`
           );
         });
         dnaList.add(newDna);
@@ -379,7 +386,7 @@ const startCreating = async () => {
     }
     layerConfigIndex++;
   }
-  writeMetaData(JSON.stringify(metadataList, null, 2));
+  // writeMetaData(JSON.stringify(metadataList, null, 2));
 };
 
 module.exports = { startCreating, buildSetup, getElements };
